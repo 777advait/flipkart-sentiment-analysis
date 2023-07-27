@@ -1,0 +1,6 @@
+requests
+BeautifulSoup4
+rich
+vaderSentiment
+questionary
+validators
