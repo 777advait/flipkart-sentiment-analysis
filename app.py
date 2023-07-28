@@ -27,11 +27,11 @@ def evaluate_sentiment(sentiment_score):
 
 url = questionary.text("Enter the URL of the product: ").ask()
 
-if not validators.url(url) or "flipkart" in url:
+if not validators.url(url) or  not "flipkart" in url:
     console.log("Invalid URL!!")
     exit(1)
     
-response = requests.get("https://www.flipkart.com/nvidia-rtx-3060-gaming-oc-12gb-lhr-graphics-card-rev-2-0-gv-n3060gaming-oc-12gd-12-gb-gddr6/p/itm210baad01a2a6?pid=GRCGHS6SSVJDGNBP&lid=LSTGRCGHS6SSVJDGNBPBWELYI&marketplace=FLIPKART&q=graphics+card&store=6bo%2Fg0i%2F6sn&srno=s_1_12&otracker=AS_Query_PredictiveAutoSuggest_3_0_na_na_na&otracker1=AS_Query_PredictiveAutoSuggest_3_0_na_na_na&fm=search-autosuggest&iid=7f1ebf5c-24b4-4ae2-afee-38126fa92b03.GRCGHS6SSVJDGNBP.SEARCH&ppt=sp&ppn=sp&qH=ae2a487734c75ca2")
+response = requests.get(url=url)
 
 soup = BeautifulSoup(response.content, "html.parser")
 
